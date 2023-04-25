@@ -10,11 +10,9 @@ def CaliSet():
     wn = turtle.Screen()
     wn.title('Cali Baby')
     wn.setworldcoordinates(-124.76537,32.09969,-114.00260,42.18684) #got these coordinates from google maps
-    #1,121.59 kilometers North to South
+    # 1,121.59 kilometers North to South
 
     canvas = wn.getcanvas()
-    print(canvas.winfo_height())
-    print(canvas.winfo_width())
     map_bg_img = tk.PhotoImage(file="PythonFinal/Cali.png")
 
     canvas.create_image(-873,-1024, anchor = tk.NW, image=map_bg_img)
@@ -22,10 +20,10 @@ def CaliSet():
     bob = turtle.Turtle()  
     krista = turtle.Turtle()
     emily = turtle.Turtle()
-    return bob,krista,emily,wn,map_bg_img
+    return bob,krista,emily,wn #,map_bg_img
 
 def test():
-    bob,krista,emily,wn,map_bg_img = CaliSet()
+    bob,krista,emily,wn = CaliSet()
     bob.goto(-124.76537,32.09969)
     bob.goto(-114.00260,42.18684)
     turtle.exitonclick()
@@ -62,7 +60,7 @@ def SEAsiaSet(): #good
     canvas = wn.getcanvas()
     map_bg_img = tk.PhotoImage(file="PythonFinal/SouthEastAsia.png")
 
-    canvas.create_image(-438,-1300, anchor = tk.NW, image=map_bg_img)
+    canvas.create_image(-1300,-438, anchor = tk.NW, image=map_bg_img)
 
     bob = turtle.Turtle()
     krista = turtle.Turtle()
@@ -77,12 +75,22 @@ def distance(swaves,pwaves):
     p_list = pwaves.split(':')
     s_sec = int(s_list[0])*60 + int(s_list[1])
     p_sec = int(p_list[0])*60 + int(p_list[1])
-    return (p_sec-s_sec)*8.4 #might try 9.75 instead of 8.4 #found 8.4 online, 9.75 from the geo class
+    return (p_sec-s_sec)*8.4 #might try 9.75 instead of 8.4 found 8.4 online, 9.75 from the geo class
 
-def distanceFormap(km): #prolly won't need
-    '''Gives the amount of degrees in lat from epicenter
-    for the map, going south the radius to start the circle'''
-    return km/110.574 #got from stackflow
+def distanceSe(km):
+    NS_dist = 2883.98
+    lat_diff = 14.96693-(-10.97059)
+    return (km*lat_diff)/NS_dist
+
+def distanceCali(km):
+    NS_dist = 1121.59
+    Lat_dist = 42.18684-32.09969
+    return (km*Lat_dist)/NS_dist
+
+def distanceCarribean(km):
+    NS_dist = 1868.16
+    Lat_dist = 24.04272-7.24111
+    return (km*Lat_dist)/NS_dist
 
 test()
 
