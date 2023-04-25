@@ -1,1 +1,1 @@
-Date,Area,Station 1 Lat,Station 1 Long,Station 1 Time,Station 2 Lat,Station 2 Long,Station 2 Time,Station 3 Lat,Station 3 Long,Station 3 Time
+Area,Station 1 Lat,Station 1 Long,Station 1 PTime,Station 1 STime, Station 2 Lat,Station 2 Long,Station 2 PTime,Station 2 STime, Station 3 Lat,Station 3 Long,Station 3 PTime,Station 3 STime

@@ -5,7 +5,7 @@ import tkinter
 #I used the irma.py to model the setup for this
 #Latitude is y(east and west) #longitude is x(North and South)
 def CaliSet():
-    turtle.setup(873,1024)
+    turtle.setup(873,1024) #pixels of window
     
     wn = turtle.Screen()
     wn.title('Cali Baby')
@@ -29,7 +29,7 @@ def test():
 
 
 def CarribeanSet():
-    turtle.setup(1024,509)
+    turtle.setup(1024,509) #pixels of window
     
     wn = turtle.Screen()
     wn.title('Caribean')
@@ -47,7 +47,7 @@ def CarribeanSet():
 
 
 def SEAsiaSet(): #good
-    turtle.setup(1029,492)
+    turtle.setup(1029,492) #pixels of window
     
     wn = turtle.Screen()
     wn.title('South East Asia')
