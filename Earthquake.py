@@ -1,11 +1,11 @@
 import turtle
 import pandas as pd
-import tkinter
+import tkinter as tk
 
 #I used the irma.py to model the setup for this
 #Latitude is y(east and west) #longitude is x(North and South)
 def CaliSet():
-    turtle.setup(873,1024) #pixels of window
+    turtle.setup(546,640) #pixels of window
     
     wn = turtle.Screen()
     wn.title('Cali Baby')
@@ -13,9 +13,11 @@ def CaliSet():
     #1,121.59 kilometers North to South
 
     canvas = wn.getcanvas()
-    map_bg_img = tkinter.PhotoImage(file="PythonFinal/Cali.png")
+    print(canvas.winfo_height())
+    print(canvas.winfo_width())
+    map_bg_img = tk.PhotoImage(file="PythonFinal/Cali.png")
 
-    canvas.create_image(-1000,-1000, anchor = tkinter.NW, image=map_bg_img)
+    canvas.create_image(-873,-1024, anchor = tk.NW, image=map_bg_img)
 
     bob = turtle.Turtle()  
     krista = turtle.Turtle()
@@ -23,7 +25,7 @@ def CaliSet():
     return bob,krista,emily,wn,map_bg_img
 
 def test():
-    bob,wn,map_bg_img = CaliSet()
+    bob,krista,emily,wn,map_bg_img = CaliSet()
     bob.goto(-124.76537,32.09969)
     bob.goto(-114.00260,42.18684)
     turtle.exitonclick()
@@ -38,9 +40,9 @@ def CarribeanSet():
     #(7.24111,-94.21823),(24.04272,-59.00667)
 
     canvas = wn.getcanvas()
-    map_bg_img = tkinter.PhotoImage(file="PythonFinal/Caribbean.png")
+    map_bg_img = tk.PhotoImage(file="PythonFinal/Caribbean.png")
 
-    canvas.create_image(-500,-1024, anchor = tkinter.NW, image=map_bg_img)
+    canvas.create_image(-500,-1024, anchor = tk.NW, image=map_bg_img)
 
     bob = turtle.Turtle()
     krista = turtle.Turtle()
@@ -58,9 +60,9 @@ def SEAsiaSet(): #good
     #(-10.97059,94.94849),(14.96693,149.53941) 
 
     canvas = wn.getcanvas()
-    map_bg_img = tkinter.PhotoImage(file="PythonFinal/SouthEastAsia.png")
+    map_bg_img = tk.PhotoImage(file="PythonFinal/SouthEastAsia.png")
 
-    canvas.create_image(-438,-1300, anchor = tkinter.NW, image=map_bg_img)
+    canvas.create_image(-438,-1300, anchor = tk.NW, image=map_bg_img)
 
     bob = turtle.Turtle()
     krista = turtle.Turtle()
