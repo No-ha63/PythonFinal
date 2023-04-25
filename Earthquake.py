@@ -18,8 +18,9 @@ def CaliSet():
     canvas.create_image(-1000,-1000, anchor = tkinter.NW, image=map_bg_img)
 
     bob = turtle.Turtle()  
-
-    return bob,wn,map_bg_img
+    krista = turtle.Turtle()
+    emily = turtle.Turtle()
+    return bob,krista,emily,wn,map_bg_img
 
 def test():
     bob,wn,map_bg_img = CaliSet()
@@ -42,8 +43,10 @@ def CarribeanSet():
     canvas.create_image(-500,-1024, anchor = tkinter.NW, image=map_bg_img)
 
     bob = turtle.Turtle()
-     #1,868.16 kilometers
-    return bob,wn,map_bg_img
+    krista = turtle.Turtle()
+    emily = turtle.Turtle()
+    #1,868.16 kilometers
+    return bob,krista,emily,wn,map_bg_img
 
 
 def SEAsiaSet(): #good
@@ -60,8 +63,10 @@ def SEAsiaSet(): #good
     canvas.create_image(-438,-1300, anchor = tkinter.NW, image=map_bg_img)
 
     bob = turtle.Turtle()
+    krista = turtle.Turtle()
+    emily = turtle.Turtle()
     #2,883.98 kilometers from North to South
-    return bob,wn,map_bg_img  
+    return bob,krista,emily,wn,map_bg_img  
 
 
 def distance(swaves,pwaves):
