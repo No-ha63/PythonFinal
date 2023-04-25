@@ -64,13 +64,16 @@ def SEAsiaSet(): #good
 
 
 def distance(swaves,pwaves):
+    '''Gives the amount of km from the epicenter'''
     s_list = swaves.split(':')
     p_list = pwaves.split(':')
     s_sec = int(s_list[0])*60 + int(s_list[1])
     p_sec = int(p_list[0])*60 + int(p_list[1])
-    return (p_sec-s_sec)*8.4
+    return (p_sec-s_sec)*8.4 #might try 9.75 instead of 8.4
 
 def distanceFormap(km):
+    '''Gives the amount of degrees in lat from epicenter
+    for the map, going south the radius to start the circle'''
     return km/110.574
 
 test()
