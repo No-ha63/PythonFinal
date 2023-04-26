@@ -1,6 +1,7 @@
 import turtle
 import pandas as pd
 import tkinter as tk
+from math import *
 
 #I used the irma.py to model the setup for this
 #Latitude is y(east and west) #longitude is x(North and South)
@@ -46,7 +47,7 @@ def CarribeanSet():
     krista = turtle.Turtle()
     emily = turtle.Turtle()
     #1,868.16 kilometers
-    return bob,krista,emily,wn,map_bg_img
+    return bob,krista,emily,wn #,map_bg_img
 
 
 def SEAsiaSet(): #good
@@ -66,16 +67,16 @@ def SEAsiaSet(): #good
     krista = turtle.Turtle()
     emily = turtle.Turtle()
     #2,883.98 kilometers from North to South
-    return bob,krista,emily,wn,map_bg_img  
+    return bob,krista,emily,wn #,map_bg_img  
 
 
-def distance(swaves,pwaves):
+def distance(pwaves,swaves):
     '''Gives the amount of km from the epicenter'''
     s_list = swaves.split(':') #got this data from online
     p_list = pwaves.split(':')
     s_sec = int(s_list[0])*60 + int(s_list[1])
     p_sec = int(p_list[0])*60 + int(p_list[1])
-    return (p_sec-s_sec)*8.4 #might try 9.75 instead of 8.4 found 8.4 online, 9.75 from the geo class
+    return (s_sec-p_sec)*9.75 #might try 9.75 instead of 8.4 found 8.4 online, 9.75 from the geo class
 
 def distanceSe(km):
     NS_dist = 2883.98
@@ -92,5 +93,157 @@ def distanceCarribean(km):
     Lat_dist = 24.04272-7.24111
     return (km*Lat_dist)/NS_dist
 
-test()
+def perimeter(radius):
+    return 2*pi*radius
 
+
+def CaliGo(index_num):
+    df = pd.read_csv('PythonFinal/Earthquakes.csv')
+    lst = df.iloc[index_num]
+    bob,krista,emily,wn = CaliSet()
+    bob.speed(0)
+    bob.width(5)
+    bob.up()
+    bob.goto(int(lst[2]),int(lst[3]))
+    bob_waves = distance(lst[4],lst[5])
+    bob_dis = distanceCali(bob_waves)
+    bob.goto(int(lst[2]),int(lst[3])-bob_dis)
+    bob.setheading(0)
+    bob.down()
+    circ_bob = perimeter(bob_dis)
+    for _ in range(100):
+        bob.fd(circ_bob/100)
+        bob.left(360/100)
+    
+    krista.speed(0)
+    krista.width(5)
+    krista.up()
+    krista.goto(int(lst[6]),int(lst[7]))
+    krista_waves = distance(lst[8],lst[9])
+    krista_dis = distanceCali(krista_waves)
+    krista.goto(int(lst[6]),int(lst[7])-krista_dis)
+    krista.setheading(0)
+    krista.down()
+    circ_krista = perimeter(krista_dis)
+    for _ in range(100):
+        krista.fd(circ_krista/100)
+        krista.left(360/100)
+    
+    emily.speed(0)
+    emily.width(5)
+    emily.up()
+    emily.goto(int(lst[10]),int(lst[11]))
+    emily_waves = distance(lst[12],lst[13])
+    emily_dis = distanceCali(emily_waves)
+    emily.goto(int(lst[10]),int(lst[11])-emily_dis)
+    emily.setheading(0)
+    emily.down()
+    circ_emily = perimeter(emily_dis)
+    for _ in range(100):
+        emily.fd(circ_emily/100)
+        emily.left(360/100)
+    
+    print('done')
+    turtle.exitonclick()
+
+def SEGO(index_num):
+    df = pd.read_csv('PythonFinal/Earthquakes.csv')
+    lst = df.iloc[index_num]
+    bob,krista,emily,wn = SEAsiaSet()
+    bob.speed(0)
+    bob.width(5)
+    bob.up()
+    bob.goto(int(lst[2]),int(lst[3]))
+    bob_waves = distance(lst[4],lst[5])
+    bob_dis = distanceSe(bob_waves)
+    bob.goto(int(lst[2]),int(lst[3])-bob_dis)
+    bob.setheading(0)
+    bob.down()
+    circ_bob = perimeter(bob_dis)
+    for _ in range(100):
+        bob.fd(circ_bob/100)
+        bob.left(360/100)
+    
+    krista.speed(0)
+    krista.width(5)
+    krista.up()
+    krista.goto(int(lst[6]),int(lst[7]))
+    krista_waves = distance(lst[8],lst[9])
+    krista_dis = distanceSe(krista_waves)
+    krista.goto(int(lst[6]),int(lst[7])-krista_dis)
+    krista.setheading(0)
+    krista.down()
+    circ_krista = perimeter(krista_dis)
+    for _ in range(100):
+        krista.fd(circ_krista/100)
+        krista.left(360/100)
+    
+    emily.speed(0)
+    emily.width(5)
+    emily.up()
+    emily.goto(int(lst[10]),int(lst[11]))
+    emily_waves = distance(lst[12],lst[13])
+    emily_dis = distanceSe(emily_waves)
+    emily.goto(int(lst[10]),int(lst[11])-emily_dis)
+    emily.setheading(0)
+    emily.down()
+    circ_emily = perimeter(emily_dis)
+    for _ in range(100):
+        emily.fd(circ_emily/100)
+        emily.left(360/100)
+    print('done')
+    turtle.exitonclick()
+
+#SEGO(1)
+
+def CaribeanGo(index_num):
+    df = pd.read_csv('PythonFinal/Earthquakes.csv')
+    lst = df.iloc[index_num]
+    bob,krista,emily,wn = CarribeanSet()
+    bob.speed(0)
+    bob.width(5)
+    bob.up()
+    bob.goto(int(lst[2]),int(lst[3]))
+    bob_waves = distance(lst[4],lst[5])
+    bob_dis = distanceCarribean(bob_waves)
+    bob.goto(int(lst[2]),int(lst[3])-bob_dis)
+    bob.setheading(0)
+    bob.down()
+    circ_bob = perimeter(bob_dis)
+    for _ in range(100):
+        bob.fd(circ_bob/100)
+        bob.left(360/100)
+    
+    krista.speed(0)
+    krista.width(5)
+    krista.up()
+    krista.goto(int(lst[6]),int(lst[7]))
+    krista_waves = distance(lst[8],lst[9])
+    krista_dis = distanceCarribean(krista_waves)
+    krista.goto(int(lst[6]),int(lst[7])-krista_dis)
+    krista.setheading(0)
+    krista.down()
+    circ_krista = perimeter(krista_dis)
+    for _ in range(100):
+        krista.fd(circ_krista/100)
+        krista.left(360/100)
+    
+    emily.speed(0)
+    emily.width(5)
+    emily.up()
+    emily.goto(int(lst[10]),int(lst[11]))
+    emily_waves = distance(lst[12],lst[13])
+    emily_dis = distanceCarribean(emily_waves)
+    emily.goto(int(lst[10]),int(lst[11])-emily_dis)
+    emily.setheading(0)
+    emily.down()
+    circ_emily = perimeter(emily_dis)
+    for _ in range(100):
+        emily.fd(circ_emily/100)
+        emily.left(360/100)
+    print('done')
+    turtle.exitonclick()
+
+#CaliGo(0)
+#SEGO(1)
+#CaribeanGo(2)
