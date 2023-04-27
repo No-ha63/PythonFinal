@@ -78,27 +78,7 @@ def SEAsiaSet(): #good
     #2,883.98 kilometers from North to South
     return bob,krista,emily,wn #,map_bg_img  
 
-def TurkeySet():
-    turtle.setup(1024,483) #pixels of window
-    wn = turtle.Screen()
-    wn.title('Turkey')
-    wn.setworldcoordinates(18.76846,35.10705,41.00542,43.23539) #got these coordinates from google maps
-    midpoint_x = (18.76846+41.00542)/2
-    midpoint_y = (35.10705+43.23539)/2
-    #903.79 kilometers North to South
 
-    map = 'PythonFinal/Turkey.gif'
-    wn.register_shape(map)
-    jimmy = turtle.Turtle()
-    jimmy.shape(map)
-    jimmy.up()
-    jimmy.speed(0)
-    jimmy.goto(midpoint_x,midpoint_y)
-
-    bob = turtle.Turtle()  
-    krista = turtle.Turtle()
-    emily = turtle.Turtle()
-    return bob,krista,emily,wn #,map_bg_img
 
 
 def distance(pwaves,swaves):
@@ -138,9 +118,11 @@ def CaliGo(index_num):
     lst = df.iloc[index_num]
     bob,krista,emily,wn = CaliSet()
     bob.speed(0)
-    bob.width(5)
+    bob.shape('arrow')
     bob.up()
     bob.goto(int(lst[2]),int(lst[3]))
+    bob.stamp()
+    bob.width(5)
     bob_waves = distance(lst[4],lst[5])
     bob_dis = distanceCali(bob_waves)
     bob.goto(int(lst[2]),int(lst[3])-bob_dis)
@@ -150,11 +132,14 @@ def CaliGo(index_num):
     for _ in range(100):
         bob.fd(circ_bob/100)
         bob.left(360/100)
+    bob.ht()
     
     krista.speed(0)
-    krista.width(5)
+    krista.shape('arrow')
     krista.up()
     krista.goto(int(lst[6]),int(lst[7]))
+    krista.stamp()
+    krista.width(5)
     krista_waves = distance(lst[8],lst[9])
     krista_dis = distanceCali(krista_waves)
     krista.goto(int(lst[6]),int(lst[7])-krista_dis)
@@ -164,11 +149,14 @@ def CaliGo(index_num):
     for _ in range(100):
         krista.fd(circ_krista/100)
         krista.left(360/100)
+    krista.ht()
     
     emily.speed(0)
-    emily.width(5)
+    emily.shape('arrow')
     emily.up()
     emily.goto(int(lst[10]),int(lst[11]))
+    emily.stamp()
+    emily.width(5)
     emily_waves = distance(lst[12],lst[13])
     emily_dis = distanceCali(emily_waves)
     emily.goto(int(lst[10]),int(lst[11])-emily_dis)
@@ -178,6 +166,7 @@ def CaliGo(index_num):
     for _ in range(100):
         emily.fd(circ_emily/100)
         emily.left(360/100)
+    emily.ht()
     
     print('done')
     turtle.exitonclick()
@@ -187,9 +176,11 @@ def SEGO(index_num):
     lst = df.iloc[index_num]
     bob,krista,emily,wn = SEAsiaSet()
     bob.speed(0)
-    bob.width(5)
+    bob.shape('arrow')
     bob.up()
     bob.goto(int(lst[2]),int(lst[3]))
+    bob.stamp()
+    bob.width(5)
     bob_waves = distance(lst[4],lst[5])
     bob_dis = distanceSe(bob_waves)
     bob.goto(int(lst[2]),int(lst[3])-bob_dis)
@@ -199,11 +190,14 @@ def SEGO(index_num):
     for _ in range(100):
         bob.fd(circ_bob/100)
         bob.left(360/100)
+    bob.ht()
     
     krista.speed(0)
-    krista.width(5)
     krista.up()
+    krista.shape('arrow')
     krista.goto(int(lst[6]),int(lst[7]))
+    krista.stamp()
+    krista.width(5)
     krista_waves = distance(lst[8],lst[9])
     krista_dis = distanceSe(krista_waves)
     krista.goto(int(lst[6]),int(lst[7])-krista_dis)
@@ -213,11 +207,14 @@ def SEGO(index_num):
     for _ in range(100):
         krista.fd(circ_krista/100)
         krista.left(360/100)
+    krista.ht()
     
     emily.speed(0)
-    emily.width(5)
     emily.up()
+    emily.shape('arrow')
     emily.goto(int(lst[10]),int(lst[11]))
+    emily.stamp()
+    emily.width(5)
     emily_waves = distance(lst[12],lst[13])
     emily_dis = distanceSe(emily_waves)
     emily.goto(int(lst[10]),int(lst[11])-emily_dis)
@@ -227,6 +224,7 @@ def SEGO(index_num):
     for _ in range(100):
         emily.fd(circ_emily/100)
         emily.left(360/100)
+    emily.ht()
     print('done')
     turtle.exitonclick()
 
@@ -236,9 +234,11 @@ def CaribeanGo(index_num):
     lst = df.iloc[index_num]
     bob,krista,emily,wn = CarribeanSet()
     bob.speed(0)
-    bob.width(5)
+    bob.shape('arrow')
     bob.up()
     bob.goto(int(lst[2]),int(lst[3]))
+    bob.stamp()
+    bob.width(5)
     bob_waves = distance(lst[4],lst[5])
     bob_dis = distanceCarribean(bob_waves)
     bob.goto(int(lst[2]),int(lst[3])-bob_dis)
@@ -248,11 +248,14 @@ def CaribeanGo(index_num):
     for _ in range(100):
         bob.fd(circ_bob/100)
         bob.left(360/100)
+    bob.ht()
     
     krista.speed(0)
-    krista.width(5)
+    krista.shape('arrow')
     krista.up()
     krista.goto(int(lst[6]),int(lst[7]))
+    krista.stamp()
+    krista.width(5)
     krista_waves = distance(lst[8],lst[9])
     krista_dis = distanceCarribean(krista_waves)
     krista.goto(int(lst[6]),int(lst[7])-krista_dis)
@@ -262,11 +265,14 @@ def CaribeanGo(index_num):
     for _ in range(100):
         krista.fd(circ_krista/100)
         krista.left(360/100)
+    krista.ht()
     
     emily.speed(0)
-    emily.width(5)
+    emily.shape('arrow')
     emily.up()
     emily.goto(int(lst[10]),int(lst[11]))
+    emily.stamp()
+    emily.width(5)
     emily_waves = distance(lst[12],lst[13])
     emily_dis = distanceCarribean(emily_waves)
     emily.goto(int(lst[10]),int(lst[11])-emily_dis)
@@ -276,59 +282,11 @@ def CaribeanGo(index_num):
     for _ in range(100):
         emily.fd(circ_emily/100)
         emily.left(360/100)
+    emily.ht()
     print('done')
     turtle.exitonclick()
 
-def TurkeyGo(index_num):
-    df = pd.read_csv('PythonFinal/Earthquakes.csv')
-    lst = df.iloc[index_num]
-    bob,krista,emily,wn = TurkeySet()
-    bob.speed(0)
-    bob.width(5)
-    bob.up()
-    bob.goto(int(lst[2]),int(lst[3]))
-    bob_waves = distance(lst[4],lst[5])
-    bob_dis = distanceTurkey(bob_waves)
-    bob.goto(int(lst[2]),int(lst[3])-bob_dis)
-    bob.setheading(0)
-    bob.down()
-    circ_bob = perimeter(bob_dis)
-    for _ in range(100):
-        bob.fd(circ_bob/100)
-        bob.left(360/100)
-    
-    krista.speed(0)
-    krista.width(5)
-    krista.up()
-    krista.goto(int(lst[6]),int(lst[7]))
-    krista_waves = distance(lst[8],lst[9])
-    krista_dis = distanceTurkey(krista_waves)
-    krista.goto(int(lst[6]),int(lst[7])-krista_dis)
-    krista.setheading(0)
-    krista.down()
-    circ_krista = perimeter(krista_dis)
-    for _ in range(100):
-        krista.fd(circ_krista/100)
-        krista.left(360/100)
-    
-    emily.speed(0)
-    emily.width(5)
-    emily.up()
-    emily.goto(int(lst[10]),int(lst[11]))
-    emily_waves = distance(lst[12],lst[13])
-    emily_dis = distanceTurkey(emily_waves)
-    emily.goto(int(lst[10]),int(lst[11])-emily_dis)
-    emily.setheading(0)
-    emily.down()
-    circ_emily = perimeter(emily_dis)
-    for _ in range(100):
-        emily.fd(circ_emily/100)
-        emily.left(360/100)
-    
-    print('done')
-    turtle.exitonclick()
 
-#CaliGo(0)
-#SEGO(1)
+#CaliGo(5)
+#SEGO(6)
 #CaribeanGo(4)
-#TurkeyGo(4)
