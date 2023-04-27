@@ -328,7 +328,7 @@ def TurkeyGo(index_num):
     print('done')
     turtle.exitonclick()
 
-CaliGo(5)
-#SEGO()
+#CaliGo(0)
+#SEGO(1)
 #CaribeanGo(4)
 #TurkeyGo(4)
