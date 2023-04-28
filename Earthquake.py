@@ -462,8 +462,9 @@ def AsiaMenu():
     print('''    Earthquakes in Asia:
     1. A 4.4 Magnitude Earthquake in China on 4/27/23.
     2. A 4.9 Magnitude Earthquake in Northern Iraq on 4/27/23.
-    3. A 4.9 Magnituede Earthquake in Southern Iraq on 4/27/23.
-    4. A 4.2 Earthquake in Turkey on 4/27/23.
+    3. A 4.9 Magnitude Earthquake in Southern Iraq on 4/27/23.
+    4. A 4.2 Magnitude Earthquake in Turkey on 4/27/23.
+    5. A 4.1 Magnitude Earthquake in by Turkey on 4/28/23
     Return to Main Menu [0]
     Exit [99]
     ### Wait for the turtles to finish, click the screen to close, then come back to the terminal ### ''')
@@ -519,6 +520,9 @@ while chose != 99:
             print('Please enter one of the following: [0,1,2,3,4,99]')
             print()
             Eq = int(input('Which Earthquake ==>'))
+        if Eq == 99:
+            chose = 99
+            break
         go = Eq-1
         CaliGo(go)
         print()
@@ -538,6 +542,9 @@ while chose != 99:
             print('Please enter one of the following: [0,1,2,3,99]')
             print()
             Eq = int(input('Which Earthquake ==>'))
+        if Eq == 99:
+            chose = 99
+            break
         go = Eq-1
         CaribeanGo(go)
         print()
@@ -557,6 +564,9 @@ while chose != 99:
             print('Please enter one of the following: [0,1,2,3,4,99]')
             print()
             Eq = int(input('Which Earthquake ==>'))
+        if Eq == 99:
+            chose = 99
+            break
         go = Eq-1
         SEGO(go)
         print()
@@ -571,11 +581,14 @@ while chose != 99:
         AsiaMenu()
         print()
         Eq = int(input('Which Earthquake ==>'))
-        while Eq not in [0,1,2,3,4,99]:
+        while Eq not in [0,1,2,3,4,5,99]:
             print()
-            print('Please enter one of the following: [0,1,2,3,4,99]')
+            print('Please enter one of the following: [0,1,2,3,4,5,99]')
             print()
             Eq = int(input('Which Earthquake ==>'))
+        if Eq == 99:
+            chose = 99
+            break
         go = Eq-1
         AsiaGo(go)
         print()
