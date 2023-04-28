@@ -1,6 +1,5 @@
 import turtle
 import pandas as pd
-import tkinter as tk
 from math import *
 
 #I used the irma.py to model the setup for this
