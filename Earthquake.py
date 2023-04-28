@@ -5,6 +5,7 @@ from math import *
 
 #I used the irma.py to model the setup for this
 #Latitude is y(east and west) #longitude is x(North and South)
+#got the distance of lat in km from a website
 def CaliSet():
     turtle.setup(1024,630) #pixels of window
     wn = turtle.Screen()
@@ -78,6 +79,31 @@ def SEAsiaSet(): #good
     #2,883.98 kilometers from North to South
     return bob,krista,emily,wn #,map_bg_img  
 
+def AsiaSet():
+    turtle.setup(1024,442) #pixels of window
+    wn = turtle.Screen()
+    wn.title('Asia')
+    x1 = 23.72260
+    y1 = 10.56143
+    x2 = 135.17298
+    y2 = 50.49969
+    wn.setworldcoordinates(x1,y1,x2,y2) #got these coordinates from google maps
+    midpoint_x = (x1+x2)/2
+    midpoint_y = (y1+y2)/2
+    #4,440.72 kilometers North to South
+
+    map = 'PythonFinal/Asia.gif'
+    wn.register_shape(map)
+    jimmy = turtle.Turtle()
+    jimmy.shape(map)
+    jimmy.up()
+    jimmy.speed(0)
+    jimmy.goto(midpoint_x,midpoint_y)
+
+    bob = turtle.Turtle()  
+    krista = turtle.Turtle()
+    emily = turtle.Turtle()
+    return bob,krista,emily,wn
 
 
 
@@ -104,10 +130,11 @@ def distanceCarribean(km):
     Lat_dist = 24.04272-7.24111
     return (km*Lat_dist)/NS_dist
 
-def distanceTurkey(km):
-    NS_dist = 903.79
-    Lat_dist = 35.10705-41.00542
+def distanceAsia(km):
+    NS_dist = 4440.72
+    Lat_dist = 50.49969-10.56143
     return (km*Lat_dist)/NS_dist
+
 
 def perimeter(radius):
     return 2*pi*radius
@@ -286,7 +313,66 @@ def CaribeanGo(index_num):
     print('done')
     turtle.exitonclick()
 
+def AsiaGo(index_num):
+    df = pd.read_csv('PythonFinal/Earthquakes.csv')
+    lst = df.iloc[index_num]
+    bob,krista,emily,wn = AsiaSet()
+    bob.speed(0)
+    bob.shape('arrow')
+    bob.up()
+    bob.goto(int(lst[2]),int(lst[3]))
+    bob.stamp()
+    bob.width(5)
+    bob_waves = distance(lst[4],lst[5])
+    bob_dis = distanceAsia(bob_waves)
+    bob.goto(int(lst[2]),int(lst[3])-bob_dis)
+    bob.setheading(0)
+    bob.down()
+    circ_bob = perimeter(bob_dis)
+    for _ in range(100):
+        bob.fd(circ_bob/100)
+        bob.left(360/100)
+    bob.ht()
+    
+    krista.speed(0)
+    krista.shape('arrow')
+    krista.up()
+    krista.goto(int(lst[6]),int(lst[7]))
+    krista.stamp()
+    krista.width(5)
+    krista_waves = distance(lst[8],lst[9])
+    krista_dis = distanceAsia(krista_waves)
+    krista.goto(int(lst[6]),int(lst[7])-krista_dis)
+    krista.setheading(0)
+    krista.down()
+    circ_krista = perimeter(krista_dis)
+    for _ in range(100):
+        krista.fd(circ_krista/100)
+        krista.left(360/100)
+    krista.ht()
+    
+    emily.speed(0)
+    emily.shape('arrow')
+    emily.up()
+    emily.goto(int(lst[10]),int(lst[11]))
+    emily.stamp()
+    emily.width(5)
+    emily_waves = distance(lst[12],lst[13])
+    emily_dis = distanceAsia(emily_waves)
+    emily.goto(int(lst[10]),int(lst[11])-emily_dis)
+    emily.setheading(0)
+    emily.down()
+    circ_emily = perimeter(emily_dis)
+    for _ in range(100):
+        emily.fd(circ_emily/100)
+        emily.left(360/100)
+    emily.ht()
+    
+    print('done')
+    turtle.exitonclick()
 
-#CaliGo(5)
+
+#CaliGo(12)
 #SEGO(8)
 #CaribeanGo(9)
+AsiaGo(14)
