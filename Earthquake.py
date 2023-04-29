@@ -381,12 +381,12 @@ def AsiaGo(index_num):
 
 def info():
     print('''    The process of locating Earthquakes is a rather interesting process called Triangulation.
-    To start, you need 3 siesmic stations. From that, you then find two parts in the siesmograph reading.
+    To start, you need 3 seismic stations. From that, you then find two parts in the seismograph reading.
     1. At what time the P waves start arriving. These are less powerful waves.
     2. At what time the S waves start arriving. Theses are more powerful waves. The highest S also tells the magnitude.
     From there, you then find the difference in arriving times. You can then use this to distance from the epicenter.
-    Now, circles can be drawn from the siesmic stations with that distance as the radius.
-    Where the 3 circles around the siesmic stations meet, that is where the epicenter is.
+    Now, circles can be drawn from the seismic stations with that distance as the radius.
+    Where the 3 circles around the seismic stations meet, that is where the epicenter is.
 
     ### Enter 0 to return to main number/99 to exit ###''')
 
@@ -423,6 +423,7 @@ def menu():
     5. See Triangulaiton used in The Caribbean (not the strongest one).
     6. See Triangulation used in Southeast Asia (Indonesia and Malaysia).
     7. See Triangulation used in Asia (Turkey to China).
+    8. Earthquake Fun Facts.
 
     Exit [99]''')
 
@@ -431,7 +432,8 @@ def CaliMenu():
     1. An Earthquake on 4/25/23 in between San Jose and Los Angeles.
     2. An Earthquake on 4/26/23 by San Jose. 
     3. A 2.5 Magnitude Earthquake on 4/27/23 in Northern California.
-    4. A 3.2 Magnitued Earthquake on 4/27/23 Northeast of San Diego.
+    4. A 3.2 Magnitude Earthquake on 4/27/23 Northeast of San Diego.
+    5. A 2.8 Magnitued Earthquake on 4/29/23 in Southeast California.
 
     Return to Main Menu [0]
     Exit [99]
@@ -453,6 +455,7 @@ def SEasiaMenu():
     2. A 4.7 Magnitude Earthquake in Papua New Guinea on 4/27/23.
     3. A 5.1 Magnitude Earthquake by Indonesia on 4/27/23.
     4. A 4.6 Magnitude Earthquake in Southern Indonesia on 4/27/23.
+    5. A 4.9 Magnitude Earthquake in Southern Indonesia on 4/29/23.
 
     Return to Main Menu [0]
     Exit [99]
@@ -469,6 +472,19 @@ def AsiaMenu():
     Exit [99]
     ### Wait for the turtles to finish, click the screen to close, then come back to the terminal ### ''')
 
+def FunFacts(): #got from https://www.ducksters.com/science/earthquakes.php (1/2) 3 and 4 came from my class 
+    print('''    Some Fun Facts:
+    1. Alaska is the most seismically active state and has more active large earthquakes
+    2. The largest earthquake was a 9.6 magnitude earthquake in Chile during 1960.
+    3. The Richter scale is logarithmic. Going up 1 on the Richter scale adds 32 times the amount of power.
+    4. One of the most deadly natural disasters was an earthquake in Shenshi, China in 1556, killing 830,000 people.
+    
+    Some notable Earthquakes in our lifetimes (since 2003):
+    1. 9.1-9.3 Magnitude Earthquake/Tsunami in Indonesia in 2004 killing 227,898 people.
+    2. 7.0 Magnitude Earthquake in Haiti in 2010, killing 160,000 people.
+    3. 7.8 Magnitude Earthquake in Turkey/Syria in 2023, killing 59,259 people.
+    4. 9.0 Magnitude Earthquake/Tsunami in Japan in 2011, killing 19,759 people.''')
+    #got mostly from wikepedia
 
 chose = 0
 while chose != 99:
@@ -476,9 +492,9 @@ while chose != 99:
     menu()
     print()
     chose = int(input('What Would you like to do? ==>'))
-    while chose not in [1,2,3,4,5,6,7,99]:
+    while chose not in [1,2,3,4,5,6,7,8,99]:
         print()
-        print('Please enter either on of the following: [1,2,3,4,5,6,7,99]')
+        print('Please enter either on of the following: [1,2,3,4,5,6,7,8,99]')
         chose = int(input('What Would you like to do? ==>'))
     if chose == 1:
         print()
@@ -515,11 +531,14 @@ while chose != 99:
         CaliMenu()
         print()
         Eq = int(input('Which Earthquake ==>'))
-        while Eq not in [0,1,2,3,4,99]:
+        while Eq not in [0,1,2,3,4,5,99]:
             print()
-            print('Please enter one of the following: [0,1,2,3,4,99]')
+            print('Please enter one of the following: [0,1,2,3,4,5,99]')
             print()
             Eq = int(input('Which Earthquake ==>'))
+        if Eq == 0:
+            chose = 0
+            break
         if Eq == 99:
             chose = 99
             break
@@ -542,6 +561,9 @@ while chose != 99:
             print('Please enter one of the following: [0,1,2,3,99]')
             print()
             Eq = int(input('Which Earthquake ==>'))
+        if Eq == 0:
+            chose = 0
+            break
         if Eq == 99:
             chose = 99
             break
@@ -559,11 +581,14 @@ while chose != 99:
         SEasiaMenu()
         print()
         Eq = int(input('Which Earthquake ==>'))
-        while Eq not in [0,1,2,3,4,99]:
+        while Eq not in [0,1,2,3,4,5,99]:
             print()
-            print('Please enter one of the following: [0,1,2,3,4,99]')
+            print('Please enter one of the following: [0,1,2,3,4,5,99]')
             print()
             Eq = int(input('Which Earthquake ==>'))
+        if Eq == 0:
+            chose = 0
+            break
         if Eq == 99:
             chose = 99
             break
@@ -586,6 +611,9 @@ while chose != 99:
             print('Please enter one of the following: [0,1,2,3,4,5,99]')
             print()
             Eq = int(input('Which Earthquake ==>'))
+        if Eq == 0:
+            chose = 0
+            break
         if Eq == 99:
             chose = 99
             break
@@ -598,6 +626,19 @@ while chose != 99:
             print('Please input 0 or 7')
             print()
             chose = int(input('Asia again [7] or Main Menu [0] ==>'))
+    if chose == 8:
+        print()
+        FunFacts()
+        print()
+        chose = int(input('Main Menu (0) or Exit (99) ==>'))
+        while chose not in [0,99]:
+            print()
+            print('Please enter 0 or 99.')
+            print()
+            chose = int(input('Main Menu (0) or Exit (99) ==>'))
     
     
 
+print()
+print('Thank you for your interest!!! 🐸🦁🦂🦉')
+print()
