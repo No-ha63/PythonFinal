@@ -166,6 +166,7 @@ def CaliGo(index_num):
     bob.ht()
     
     krista.speed(0)
+    krista.color('red')
     krista.shape('arrow')
     krista.up()
     krista.goto(int(lst[6]),int(lst[7]))
@@ -183,6 +184,7 @@ def CaliGo(index_num):
     krista.ht()
     
     emily.speed(0)
+    emily.color('blue')
     emily.shape('arrow')
     emily.up()
     emily.goto(int(lst[10]),int(lst[11]))
@@ -225,6 +227,7 @@ def SEGO(index_num):
     bob.ht()
     
     krista.speed(0)
+    krista.color('red')
     krista.up()
     krista.shape('arrow')
     krista.goto(int(lst[6]),int(lst[7]))
@@ -242,6 +245,7 @@ def SEGO(index_num):
     krista.ht()
     
     emily.speed(0)
+    emily.color('blue')
     emily.up()
     emily.shape('arrow')
     emily.goto(int(lst[10]),int(lst[11]))
@@ -284,6 +288,7 @@ def CaribeanGo(index_num):
     bob.ht()
     
     krista.speed(0)
+    krista.color('red')
     krista.shape('arrow')
     krista.up()
     krista.goto(int(lst[6]),int(lst[7]))
@@ -301,6 +306,7 @@ def CaribeanGo(index_num):
     krista.ht()
     
     emily.speed(0)
+    emily.color('blue')
     emily.shape('arrow')
     emily.up()
     emily.goto(int(lst[10]),int(lst[11]))
@@ -342,6 +348,7 @@ def AsiaGo(index_num):
     bob.ht()
     
     krista.speed(0)
+    krista.color('red')
     krista.shape('arrow')
     krista.up()
     krista.goto(int(lst[6]),int(lst[7]))
@@ -359,6 +366,7 @@ def AsiaGo(index_num):
     krista.ht()
     
     emily.speed(0)
+    emily.color('blue')
     emily.shape('arrow')
     emily.up()
     emily.goto(int(lst[10]),int(lst[11]))
@@ -403,6 +411,9 @@ def myInfo():
     I then go south of a seismic station by this much, set the turtle to face east.
     Then make a circle with the distance as the radius.
     Where the circles meet, or close to hit, there was an Earthquake there.
+
+    Every stationary arrow represents a seismic station. The circles being drawn around each station has a radius
+    of the distance from the epicenter, which is determined from the s and p waves. 
 
     ### Enter 0 to return to main number/99 to exit ###''')
 
