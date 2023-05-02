@@ -446,6 +446,9 @@ def CaliMenu():
     4. A 3.2 Magnitude Earthquake on 4/27/23 Northeast of San Diego.
     5. A 2.8 Magnitued Earthquake on 4/29/23 in Southeast California.
 
+    Every stationary arrow represents a seismic station. The circles being drawn around each station has a radius
+    of the distance from the epicenter, which is determined from the s and p waves. 
+
     Return to Main Menu [0]
     Exit [99]
     ### Wait for the turtles to finish, click the screen to close, then come back to the terminal ###''')
@@ -455,6 +458,9 @@ def CaribbeanMenu():
     1. Earthquake on 4/25/23 north of San Jaun, Puerto Rico.
     2. Earthquake on 4/26/23 southwest of Puerto Rico.
     3. A 2.8 Magnitude Earthquake on 4/27/23 south of Puerto Rico.
+
+    Every stationary arrow represents a seismic station. The circles being drawn around each station has a radius
+    of the distance from the epicenter, which is determined from the s and p waves. 
 
     Return to Main Menu [0]
     Exit [99]
@@ -468,6 +474,9 @@ def SEasiaMenu():
     4. A 4.6 Magnitude Earthquake in Southern Indonesia on 4/27/23.
     5. A 4.9 Magnitude Earthquake in Southern Indonesia on 4/29/23.
 
+    Every stationary arrow represents a seismic station. The circles being drawn around each station has a radius
+    of the distance from the epicenter, which is determined from the s and p waves. 
+
     Return to Main Menu [0]
     Exit [99]
     ### Wait for the turtles to finish, click the screen to close, then come back to the terminal ###''')
@@ -478,7 +487,11 @@ def AsiaMenu():
     2. A 4.9 Magnitude Earthquake in Northern Iraq on 4/27/23.
     3. A 4.9 Magnitude Earthquake in Southern Iraq on 4/27/23.
     4. A 4.2 Magnitude Earthquake in Turkey on 4/27/23.
-    5. A 4.1 Magnitude Earthquake in by Turkey on 4/28/23
+    5. A 4.1 Magnitude Earthquake in by Turkey on 4/28/23.
+
+    Every stationary arrow represents a seismic station. The circles being drawn around each station has a radius
+    of the distance from the epicenter, which is determined from the s and p waves. 
+    
     Return to Main Menu [0]
     Exit [99]
     ### Wait for the turtles to finish, click the screen to close, then come back to the terminal ### ''')
