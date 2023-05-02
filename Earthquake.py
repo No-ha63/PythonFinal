@@ -11,8 +11,8 @@ def CaliSet():
     wn = turtle.Screen()
     wn.title('Cali Baby')
     wn.setworldcoordinates(-133.56926,30.85874,-108.94300,42.91534) #got these coordinates from google maps
-    midpoint_x = (-133.56926+-108.94300)/2
-    midpoint_y = (30.8587+42.91534)/2
+    midpoint_x = (-133.56926+-108.94300)/2 #https://stackoverflow.com/questions/40447880/how-can-i-import-an-image-in-python-turtle
+    midpoint_y = (30.8587+42.91534)/2 #Rosen sent me to do that hack
     #1,340.57 kilometers North to South got using a site 
 
     map = 'PythonFinal/Cali2.gif'
