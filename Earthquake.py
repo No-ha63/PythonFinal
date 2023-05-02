@@ -1,6 +1,6 @@
 import turtle
-import pandas as pd
-from math import *
+import pandas as pd #anything I learned in pandas I got from a datascience class and self exploratiion
+from math import * #learned this way to import from datascience class
 
 #I used the irma.py to model the setup for this
 #Latitude is y(east and west) #longitude is x(North and South)
@@ -115,16 +115,16 @@ def distance(pwaves,swaves):
     s_list = swaves.split(':') #got this data from online
     p_list = pwaves.split(':')
     s_sec = int(s_list[0])*60 + int(s_list[1])
-    p_sec = int(p_list[0])*60 + int(p_list[1])
+    p_sec = int(p_list[0])*60 + int(p_list[1]) #this data I got from USGS
     return (s_sec-p_sec)*9.75 #might try 9.75 instead of 8.4 found 8.4 online, 9.75 from the geo class
 
 def distanceSe(km):
-    NS_dist = 2883.98
+    NS_dist = 2883.98 #this is km distance of North and South, got from https://www.meridianoutpost.com/resources/etools/calculators/calculator-latitude-longitude-distance.php
     lat_diff = 14.96693-(-10.97059)
     return (km*lat_diff)/NS_dist
 
 def distanceCali(km):
-    NS_dist = 1340.57
+    NS_dist = 1340.57 #same system as above
     Lat_dist = 42.91534-30.85874
     return (km*Lat_dist)/NS_dist
 
@@ -163,7 +163,7 @@ def CaliGo(index_num):
     for _ in range(100):
         bob.fd(circ_bob/100)
         bob.left(360/100)
-    bob.ht()
+    bob.ht() #hides turtle
     
     krista.speed(0)
     krista.color('red')
@@ -387,7 +387,7 @@ def AsiaGo(index_num):
     turtle.exitonclick()
 
 
-def info():
+def info(): #got this from geo class
     print('''    The process of locating Earthquakes is a rather interesting process called Triangulation.
     To start, you need 3 seismic stations. From that, you then find two parts in the seismograph reading.
     1. At what time the P waves start arriving. These are less powerful waves.
